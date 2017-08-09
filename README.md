@@ -68,8 +68,8 @@ table would only need a maximum of 10,080 keys (i.e. 60 minutes/hour * 24 hours/
 7 days/week = 10,080 minutes/week). Since we can map to within this space directly
 from the time within the week, we don't need to worry about hash functions and 
 collisions; we could build a 10,080 element array that maps minutes directly to the 
-rate. For example, index 14 in the array would map to Sunday at 12:15 AM, and the 
-index 1454 would map to Monday at 12:15 AM. It would be a fun experiment to see
+rate. For example, index 15 in the array would map to Sunday at 12:15 AM, and the 
+index 1455 would map to Monday at 12:15 AM. It would be a fun experiment to see
 how much faster that would be over the current O(n) implementation.
 
 ### Implementation notes
