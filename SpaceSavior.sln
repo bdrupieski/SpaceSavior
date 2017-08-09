@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{76C5AF63-CCDF-48D0-B7BE-9696FB3261BB}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceSavior.Business", "SpaceSavior.Business\SpaceSavior.Business.csproj", "{57210855-18C2-4221-841E-6C571E7662BE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceSavior.Api", "SpaceSavior.Api\SpaceSavior.Api.csproj", "{2A5638B1-D339-44B4-93EC-541899B1747F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{69A14D7C-E2D8-4A17-AAE8-38DBC447FF73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceSavior.Business.UnitTests", "SpaceSavior.Business.UnitTests\SpaceSavior.Business.UnitTests.csproj", "{C4946497-7116-4ED9-8987-56BABD25C876}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpaceSavior.Api.UnitTests", "SpaceSavior.Api.UnitTests\SpaceSavior.Api.UnitTests.csproj", "{E8B6B016-63E5-4098-AB77-E97DEC772C91}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{6FD660B5-5204-4669-8140-5145471865E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57210855-18C2-4221-841E-6C571E7662BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57210855-18C2-4221-841E-6C571E7662BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57210855-18C2-4221-841E-6C571E7662BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57210855-18C2-4221-841E-6C571E7662BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A5638B1-D339-44B4-93EC-541899B1747F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A5638B1-D339-44B4-93EC-541899B1747F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A5638B1-D339-44B4-93EC-541899B1747F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A5638B1-D339-44B4-93EC-541899B1747F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4946497-7116-4ED9-8987-56BABD25C876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4946497-7116-4ED9-8987-56BABD25C876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4946497-7116-4ED9-8987-56BABD25C876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4946497-7116-4ED9-8987-56BABD25C876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8B6B016-63E5-4098-AB77-E97DEC772C91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8B6B016-63E5-4098-AB77-E97DEC772C91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8B6B016-63E5-4098-AB77-E97DEC772C91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8B6B016-63E5-4098-AB77-E97DEC772C91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FD660B5-5204-4669-8140-5145471865E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FD660B5-5204-4669-8140-5145471865E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FD660B5-5204-4669-8140-5145471865E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FD660B5-5204-4669-8140-5145471865E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C4946497-7116-4ED9-8987-56BABD25C876} = {69A14D7C-E2D8-4A17-AAE8-38DBC447FF73}
+		{E8B6B016-63E5-4098-AB77-E97DEC772C91} = {69A14D7C-E2D8-4A17-AAE8-38DBC447FF73}
+	EndGlobalSection
+EndGlobal

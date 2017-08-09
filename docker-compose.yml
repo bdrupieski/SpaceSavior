@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  spacesavior.api:
+    image: spacesavior.api
+    build:
+      context: ./SpaceSavior.Api
+      dockerfile: Dockerfile
