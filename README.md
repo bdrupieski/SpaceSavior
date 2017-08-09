@@ -83,7 +83,7 @@ copy that one file, like this:
 
 ```
 <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
-  <ItemGroup>```
+  <ItemGroup>
     <DocFile Include="bin\**\**\SpaceSavior.Api.xml" />
   </ItemGroup>
   <Copy SourceFiles="@(DocFile)" DestinationFolder="$(PublishDir)" SkipUnchangedFiles="false" />

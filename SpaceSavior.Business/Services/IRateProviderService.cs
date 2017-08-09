@@ -6,7 +6,7 @@ namespace SpaceSavior.Business.Services
     public interface IRateProviderService
     {
         /// <summary>
-        /// 
+        /// Retrieves a price if the given date range is inside a rate definition.
         /// </summary>
         /// <param name="from"></param>
         /// <param name="to"></param>
