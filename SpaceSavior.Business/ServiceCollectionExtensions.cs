@@ -4,7 +4,7 @@ using SpaceSavior.Business.Services;
 
 namespace SpaceSavior.Business
 {
-    public static class ServicesCollectionExtensions
+    public static class ServiceCollectionExtensions
     {
         public static void AddSpaceSaviorServices(this IServiceCollection serviceCollection, IRateConfigurationSettings rateConfigurationSettings)
         {
