@@ -69,8 +69,13 @@ table would only need a maximum of 10,080 keys (i.e. 60 minutes/hour * 24 hours/
 from the time within the week, we don't need to worry about hash functions and 
 collisions; we could build a 10,080 element array that maps minutes directly to the 
 rate. For example, index 15 in the array would map to Sunday at 12:15 AM, and the 
-index 1455 would map to Monday at 12:15 AM. It would be a fun experiment to see
-how much faster that would be over the current O(n) implementation.
+index 1455 would map to Monday at 12:15 AM. ~~It would be a fun experiment to see
+how much faster that would be over the current O(n) implementation.~~ I tried this
+out. See `OptimizedRateProviderService` and `RateProviderPerformanceComparisonTests`.
+The constant time implementation in `OptimizedRateProviderService` can retrieve
+rate quotes in about a tenth of the time compared to the linear time implementation in the
+comparison test in `RateProviderPerformanceComparisonTests` using 24 rate 
+definitions for each day.
 
 ### Implementation notes
 
