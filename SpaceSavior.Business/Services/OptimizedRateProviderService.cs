@@ -4,7 +4,7 @@ using SpaceSavior.Business.Models;
 
 namespace SpaceSavior.Business.Services
 {
-    public class DictionaryRateProviderService : IRateProviderService
+    public class OptimizedRateProviderService : IRateProviderService
     {
         private const int MinutesInAWeek = 60 * 24 * 7;
 
@@ -23,7 +23,7 @@ namespace SpaceSavior.Business.Services
 
         private readonly IRateConfigurationSettings _rateConfigurationSettings;
 
-        public DictionaryRateProviderService(IRateConfigurationSettings rateConfigurationSettings)
+        public OptimizedRateProviderService(IRateConfigurationSettings rateConfigurationSettings)
         {
             _rateConfigurationSettings = rateConfigurationSettings;
         }

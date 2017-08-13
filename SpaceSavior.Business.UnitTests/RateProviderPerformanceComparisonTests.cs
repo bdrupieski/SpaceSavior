@@ -12,16 +12,16 @@ namespace SpaceSavior.Business.UnitTests
     {
         private readonly ITestOutputHelper _testOutputHelper;
 
-        private readonly DictionaryRateProviderService _dictionaryRateProviderService;
+        private readonly OptimizedRateProviderService _optimizedRateProviderService;
         private readonly RateProviderService _rateProviderService;
 
         public RateProviderPerformanceComparisonTests(ITestOutputHelper testOutputHelper)
         {
             _testOutputHelper = testOutputHelper;
-            _dictionaryRateProviderService = new DictionaryRateProviderService(new RateConfigurationSettings());
+            _optimizedRateProviderService = new OptimizedRateProviderService(new RateConfigurationSettings());
             _rateProviderService = new RateProviderService(new RateConfigurationSettings());
 
-            SetUpRates(_dictionaryRateProviderService);
+            SetUpRates(_optimizedRateProviderService);
             SetUpRates(_rateProviderService);
         }
 
@@ -73,10 +73,10 @@ namespace SpaceSavior.Business.UnitTests
         public void CompareLinearAndConstantTimeRateQuoteRetrieval()
         {
             var rateProviderServiceMilliseconds = GetRateQuotesPerformanceMilliseconds(_rateProviderService);
-            var dictionaryRateProviderServiceMilliseconds = GetRateQuotesPerformanceMilliseconds(_dictionaryRateProviderService);
+            var optimizedRateProviderServiceMilliseconds = GetRateQuotesPerformanceMilliseconds(_optimizedRateProviderService);
 
             _testOutputHelper.WriteLine($"{rateProviderServiceMilliseconds} ms for {nameof(RateProviderService)}");
-            _testOutputHelper.WriteLine($"{dictionaryRateProviderServiceMilliseconds} ms for {nameof(DictionaryRateProviderService)}");
+            _testOutputHelper.WriteLine($"{optimizedRateProviderServiceMilliseconds} ms for {nameof(OptimizedRateProviderService)}");
         }
     }
 }
