@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using SpaceSavior.Business.Models;
@@ -69,7 +69,7 @@ namespace SpaceSavior.Business.Services
             foreach (var ratesForDay in rateDateRanges)
             {
                 var ratesOrderedByStartTime = ratesForDay.Value.OrderBy(x => x.Start);
-                var pairsOfRatesMovingForwardInTime = ratesOrderedByStartTime.Zip(ratesOrderedByStartTime.Skip(1), (a, b) => (a, b));
+                var pairsOfRatesMovingForwardInTime = ratesOrderedByStartTime.Zip(ratesOrderedByStartTime.Skip(1), (a, b) => (rateA: a, rateB: b));
                 foreach (var (rateA, rateB) in pairsOfRatesMovingForwardInTime)
                 {
                     if (rateA.End > rateB.Start)
