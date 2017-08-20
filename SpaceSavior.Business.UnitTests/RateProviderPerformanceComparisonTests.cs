@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.Linq;
 using SpaceSavior.Business.Models;
@@ -44,29 +44,30 @@ namespace SpaceSavior.Business.UnitTests
             });
         }
 
-        private long GetRateQuotesPerformanceMilliseconds(IRateProviderService rateProviderService)
+        private static long GetRateQuotesPerformanceMilliseconds(IRateProviderService rateProviderService)
         {
             var everyMinuteInAWeek = Enumerable
                 .Range(0, 60 * 24 * 7)
                 .Select(x => TimeSpan.FromMinutes(x))
                 .ToList();
+            var everyMinuteInAWeekAnHourLater = everyMinuteInAWeek.Skip(60);
 
             var sunday = new DateTimeOffset(2017, 8, 13, 0, 0, 0, TimeSpan.Zero);
-            var ranges = everyMinuteInAWeek
-                .Zip(everyMinuteInAWeek.Skip(60), (start, end) => new { From = sunday + start, To = sunday + end})
+            var oneHourTimeIntervals = everyMinuteInAWeek
+                .Zip(everyMinuteInAWeekAnHourLater, (start, end) => new { From = sunday + start, To = sunday + end })
                 .ToList();
 
-            var sw = Stopwatch.StartNew();
-            for (int i = 0; i < 25; i++)
+            var stopwatch = Stopwatch.StartNew();
+            for (int i = 0; i < 250; i++)
             {
-                foreach (var range in ranges)
+                foreach (var timeInterval in oneHourTimeIntervals)
                 {
-                    rateProviderService.GetPrice(range.From, range.To);
+                    rateProviderService.GetPrice(timeInterval.From, timeInterval.To);
                 }
             }
-            sw.Stop();
+            stopwatch.Stop();
 
-            return sw.ElapsedMilliseconds;
+            return stopwatch.ElapsedMilliseconds;
         }
 
         [Fact]
@@ -77,6 +78,9 @@ namespace SpaceSavior.Business.UnitTests
 
             _testOutputHelper.WriteLine($"{rateProviderServiceMilliseconds} ms for {nameof(RateProviderService)}");
             _testOutputHelper.WriteLine($"{optimizedRateProviderServiceMilliseconds} ms for {nameof(OptimizedRateProviderService)}");
+
+            double timesFaster = (rateProviderServiceMilliseconds - optimizedRateProviderServiceMilliseconds) / (double)optimizedRateProviderServiceMilliseconds;
+            _testOutputHelper.WriteLine($"{nameof(OptimizedRateProviderService)} is {timesFaster:P2} faster than {nameof(RateProviderService)}");
         }
     }
 }
